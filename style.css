@@ -18,7 +18,7 @@ body{
 
 .contenedor-principal{
 
-    height: 235vh;
+    
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -168,7 +168,7 @@ li a:hover{
     border: 1px solid white;
     margin-top: 35px;
     padding: 25px;
-    height: 50vh;
+    
     border-radius: 25px;
     background-color: rgb(3, 4, 62);
     max-width: 75vw;
