@@ -218,7 +218,8 @@ li a:hover{
 
     display: flex;
     flex-direction: row;
-    gap: 35px;
+    gap: 30px;
+    
 
 }
 
@@ -227,8 +228,15 @@ li a:hover{
     height: 50px;
     width: 50px;
     
+    
 
 
+
+}
+
+.redes a{
+
+    
 
 }
 
