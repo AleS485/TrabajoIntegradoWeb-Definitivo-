@@ -8,7 +8,6 @@
 img{
     height: 120px;
     width: 120px;
-
 }
 
 body{
@@ -19,7 +18,7 @@ body{
 
 .contenedor-principal{
 
-    height: 100vh;
+    height: 245vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -45,6 +44,8 @@ body{
     height: 75px;
     width: 75px;
     border-radius: 12px;
+    margin-top: 10px;
+    
 }
 
 ul{
@@ -70,6 +71,7 @@ li{
 li:hover{
     background-color: rgb(29, 31, 146);
     transition: .4s;
+    cursor: pointer;
 }
 
 li a{
@@ -84,4 +86,97 @@ li a:hover{
     transition: .4s;
     
 }
+
+.imagen-principal{
+
+    width: 85vw;
+    height: 685px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+}
+
+.imagen-principal button{
+    height: 100px;
+    width: 85px;
+    color: white;
+    background-color: rgb(7, 9, 130);
+    border: 2px solid white;
+    border-radius: 35px;
+    font-size: 35px;
+}
+
+.imagen-principal button:hover{
+    font-size: 40px;
+    cursor: pointer;
+    background-color: rgb(29, 31, 146);
+    transition: .3s;
+}
+
+.imagen-principal img{
+
+    width: 75vw;
+    height: 685px;
+    border-radius: 25px;
+    
+
+}
+
+.mas-vendidos p{
+
+    font-size: 45px;
+    color: white;
+    background-color: rgb(7, 9, 130);
+    padding: 8px;
+    border-radius: 15px;
+    border: 3px solid white;
+
+}
+
+.mas-imagenes{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+
+}
+
+.mas-imagenes img{
+
+    height: 245px;
+    width: 375px;
+    border-radius: 25px;
+    border: 3px solid white;
+    
+
+}
+
+
+.sobre-nosotros{
+
+    border: 1px solid white;
+    margin-top: 35px;
+    padding: 25px;
+    height: 55vh;
+    border-radius: 25px;
+    background-color: black;
+
+
+
+}
+
+.sobre-nosotros h1, p{
+
+
+    color: white;
+}
+
+
+
 
