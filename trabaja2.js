@@ -1,5 +1,5 @@
 function validacionFormulario(){
-    
+    const formulario = document.getElementById("formulario");
     const nombreUsuario = document.getElementById("Nombre").value.trim();
     const apellidoUsuario = document.getElementById("Apellido").value.trim();
     const telefonoUsuario = document.getElementById("Telefono").value.trim();
@@ -14,7 +14,7 @@ function validacionFormulario(){
     let indicadorError = false;
     
     const mensajeValidacion = document.getElementById("contenedor-validacion");
-     
+    
 
     
     errorNombre.innerHTML = "";
@@ -158,12 +158,18 @@ function validacionFormulario(){
         
         
         
+
+        mensajeValidacion.innerHTML = "<button type=submit>Enviar</button>";
         const mensajeCorrecto = document.createElement("p");  
+        mensajeCorrecto.classList.add("claseParaValidacion");
         mensajeValidacion.appendChild(mensajeCorrecto);
-        mensajeCorrecto.style.display = "block";
-        mensajeCorrecto.innerHTML = "El formulario esta correcto";
-        mensajeCorrecto.style.color = "green";
-        mensajeCorrecto.style.fontWeight = "bold";
+        mensajeCorrecto.innerHTML += "El formulario esta correcto <br>";
+        mensajeCorrecto.innerHTML += "Nombre: " + nombreUsuario + "<br>";
+        mensajeCorrecto.innerHTML += "Apellido: " + apellidoUsuario + "<br>";
+        mensajeCorrecto.innerHTML += "Telefono: " + telefonoUsuario + "<br>";
+        mensajeCorrecto.innerHTML += "Mail: " + mailUsuario + "<br>";
+        mensajeCorrecto.innerHTML += "Te contactaremos en breve!";
+        
 
         
 

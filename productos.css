@@ -120,6 +120,13 @@ li a:hover{
 
 }
 
+.producto:hover{
+    cursor: pointer;
+    background-color: rgb(29, 31, 146);
+    transition: .4s;
+    scale: 1.1;
+
+}
 
 .producto p{
     color: white;

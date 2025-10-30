@@ -52,6 +52,7 @@ body {
 }
 
 .logo {
+    height: 75px;
     width: 75px;
     border-radius: 12px;
     margin-top: 10px;
@@ -121,7 +122,8 @@ li a:hover {
     text-align: left;
     font-weight: bold;
     font-size: 30px;
-    color: rgba(175, 36, 194, 0.801);
+    color: white;
+    text-decoration: underline;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -138,7 +140,7 @@ li a:hover {
     border-radius: 15px;
     border: 3px solid white;
     color: white;
-
+    
 }
 
 .form-group button {
@@ -191,4 +193,13 @@ li a:hover {
     margin-top: 20px;
 }
 
+.claseParaValidacion{
+
+    display : block;
+    border : 2px solid white;
+    border-radius : 25px;
+    color : rgb(46, 235, 46);
+    font-weight : bold;
+
+}
 
