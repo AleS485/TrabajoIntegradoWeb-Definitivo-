@@ -1,5 +1,5 @@
 function validacionFormulario(){
-
+    const errorApellido = document.getElementById("errorApellido");
     const nombreUsuario = document.getElementById("Nombre").value.trim();
     const apellidoUsuario = document.getElementById("Apellido").value.trim();
     const telefonoUsuario = document.getElementById("Telefono").value.trim();
@@ -12,13 +12,13 @@ function validacionFormulario(){
 
 
     if(nombreUsuario.length <= 3 || nombreUsuario.length >= 30){
-        especificacionErrores += "El nombre no puede tener menos de 3 caracteres. ";
+        especificacionErrores += "El nombre no puede tener menos de 3 caracteres. <br>";
         
         indicadorError = true;
     }
     
     if(nombreUsuario.match(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ ]/g)){
-        especificacionErrores += "El nombre solo tiene que llevar letras. ";
+        especificacionErrores += "El nombre solo tiene que llevar letras. <br>";
         
         indicadorError = true;
 
@@ -26,33 +26,35 @@ function validacionFormulario(){
 
     if(apellidoUsuario.length <= 3 || apellidoUsuario.length >= 30){
 
-        especificacionErrores += "El apellido no puede tener menos de 3 caracteres. ";
+        errorApellido.style.display = "block";
+        errorApellido.style.color = "red";
+        especificacionErrores += "El apellido no puede tener menos de 3 caracteres. <br>";
         indicadorError = true;
 
     }
     if(apellidoUsuario.match(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ ]/g)){
 
-        especificacionErrores += "El apellido solo tiene que llevar letras. ";
+        especificacionErrores += "El apellido solo tiene que llevar letras. <br>";
         indicadorError = true;
 
     } 
     
     if(telefonoUsuario.length < 10 || telefonoUsuario.length > 15){
 
-        especificacionErrores += "El telefono debe tener entre 10 y 15 caracteres. ";
+        especificacionErrores += "El telefono debe tener entre 10 y 15 caracteres. <br>";
         indicadorError = true;
     }   
     if(telefonoUsuario.match(/[^0-9+]/g)){
 
-        especificacionErrores += "El telefono solo puede tener numeros y el simbolo '+'. ";
+        especificacionErrores += "El telefono solo puede tener numeros y el simbolo '+'. <br>";
         indicadorError = true;  
 
     }
-    
+
 
     if(mailUsuario.length <= 5){
 
-        especificacionErrores += "El mail no puede ser menor o igual a 5 caracteres. ";
+        especificacionErrores += "El mail no puede ser menor o igual a 5 caracteres. <br>";
         
         indicadorError = true;
 
@@ -61,11 +63,13 @@ function validacionFormulario(){
 
     if(!mailUsuario.includes("@")){
 
-        especificacionErrores += "El mail debe incluir el : '@'. ";
+        especificacionErrores += "El mail debe incluir el : '@'. <br>";
         
         indicadorError = true;
 
     }
+
+
 
     if(indicadorError == false){
 
