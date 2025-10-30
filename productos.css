@@ -45,6 +45,7 @@ body{
 }
 
 .logo{
+    height: 75px;
     width: 75px;
     border-radius: 12px;
     margin-top: 10px;
@@ -89,3 +90,122 @@ li a:hover{
     transition: .4s;
     
 }
+
+.titulo h1{
+
+    color: white;
+    font-size: 35px;
+
+}
+
+.productos{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+    margin-bottom: 25px;
+
+}
+
+.producto{
+
+    padding: 45px;
+    border: 2px solid white;
+    background-color: rgb(3, 4, 62);
+    border-radius: 25px;
+
+
+
+}
+
+
+.producto p{
+    color: white;
+    font-size: 20px;
+}
+
+.categoria{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.producto img{
+
+    height: 205px;
+    width: 205px;
+    border-radius: 15px;
+    border: 2px solid white;
+
+}
+
+.precio{
+
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.redes{
+
+    background-color: rgb(3, 4, 62);
+    width: 100vw;
+    height: 30vh;
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid white;
+
+}
+
+
+.redes h2{
+
+    color: white;
+    font-size: 35px;
+
+}
+
+.imagenes-redes{
+
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    
+
+}
+
+.redes img{
+
+    height: 50px;
+    width: 50px;
+    
+    
+
+
+
+}
+
+
+.redes img:hover{
+
+    scale: 1.5;
+    cursor: pointer;
+    transition: .4s;
+
+}
+
