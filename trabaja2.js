@@ -1,70 +1,146 @@
 function validacionFormulario(){
-    const errorApellido = document.getElementById("errorApellido");
+    
     const nombreUsuario = document.getElementById("Nombre").value.trim();
     const apellidoUsuario = document.getElementById("Apellido").value.trim();
     const telefonoUsuario = document.getElementById("Telefono").value.trim();
     const mailUsuario = document.getElementById("email").value.trim();
-    let mensajeError = document.getElementById("errorSubmit");
+    
+    const errorNombre = document.getElementById("errorNombre");
+    const errorApellido = document.getElementById("errorApellido");
+    const errorTelefono = document.getElementById("errorTelefono"); 
+    const errorEmail = document.getElementById("errorEmail"); 
+    const emailExpresionRegex = /^\S+@\S+\.\S+$/;
 
-    mensajeError.style.display = "none";
     let indicadorError = false;
-    let especificacionErrores = "";
+    
+    const mensajeValidacion = document.getElementById("contenedor-validacion");
+     
+
+    
+    errorNombre.innerHTML = "";
+    errorApellido.innerHTML = "";
+    errorTelefono.innerHTML = "";
+    errorEmail.innerHTML = "";
 
 
-    if(nombreUsuario.length <= 3 || nombreUsuario.length >= 30){
-        especificacionErrores += "El nombre no puede tener menos de 3 caracteres. <br>";
+    
+
+    if(nombreUsuario.length <= 3){
+
+        errorNombre.style.marginTop = "5px";
+        errorNombre.style.display = "block";
+        errorNombre.style.color = "red";
+        errorNombre.style.fontWeight = "bold";
+        
+        errorNombre.innerHTML = "El nombre no puede tener menos de 3 caracteres.";
         
         indicadorError = true;
     }
+
+    if(nombreUsuario.length >= 20){
+        errorNombre.style.marginTop = "5px";
+        errorNombre.style.display = "block";
+        errorNombre.style.color = "red";
+        errorNombre.style.fontWeight = "bold";
+        
+        errorNombre.innerHTML = "El nombre no puede tener mas de 20 caracteres.";
+        
+        indicadorError = true;
+    }
+
     
     if(nombreUsuario.match(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ ]/g)){
-        especificacionErrores += "El nombre solo tiene que llevar letras. <br>";
+        errorNombre.style.marginTop = "5px";
+        errorNombre.style.display = "block";
+        errorNombre.style.color = "red";
+        errorNombre.style.fontWeight = "bold";
+        
+        errorNombre.innerHTML = "El nombre solo puede llevar letras.";
         
         indicadorError = true;
 
     }
 
-    if(apellidoUsuario.length <= 3 || apellidoUsuario.length >= 30){
-
+    if(apellidoUsuario.length <= 3){
+        errorApellido.style.fontWeight = "bold";
+        errorApellido.style.marginTop = "5px";
         errorApellido.style.display = "block";
         errorApellido.style.color = "red";
-        especificacionErrores += "El apellido no puede tener menos de 3 caracteres. <br>";
+        errorApellido.innerHTML += "El apellido no puede tener menos de 3 caracteres.";
         indicadorError = true;
 
     }
-    if(apellidoUsuario.match(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ ]/g)){
 
-        especificacionErrores += "El apellido solo tiene que llevar letras. <br>";
+    if(apellidoUsuario.length >= 20){
+        errorApellido.style.fontWeight = "bold";
+        errorApellido.style.marginTop = "5px";
+        errorApellido.style.display = "block";
+        errorApellido.style.color = "red";
+        errorApellido.innerHTML += "El apellido no puede tener mas de 20 caracteres.";
+        indicadorError = true;
+
+    }
+
+    if(apellidoUsuario.match(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ ]/g)){
+        errorApellido.style.fontWeight = "bold";
+        errorApellido.style.marginTop = "5px";
+        errorApellido.style.display = "block";
+        errorApellido.style.color = "red";
+        errorApellido.innerHTML += "El apellido solo puede llevar letras.";
         indicadorError = true;
 
     } 
     
-    if(telefonoUsuario.length < 10 || telefonoUsuario.length > 15){
-
-        especificacionErrores += "El telefono debe tener entre 10 y 15 caracteres. <br>";
+    if(telefonoUsuario.length < 1){
+        errorTelefono.style.fontWeight = "bold";
+        errorTelefono.style.marginTop = "5px";
+        errorTelefono.style.display = "block";
+        errorTelefono.style.color = "red";
+        errorTelefono.innerHTML += "El telefono debe tener mas de 1 numero.";
         indicadorError = true;
     }   
-    if(telefonoUsuario.match(/[^0-9+]/g)){
 
-        especificacionErrores += "El telefono solo puede tener numeros y el simbolo '+'. <br>";
-        indicadorError = true;  
+    if(telefonoUsuario.length > 12){
+        errorTelefono.style.fontWeight = "bold";
+        errorTelefono.style.marginTop = "5px";
+        errorTelefono.style.display = "block";
+        errorTelefono.style.color = "red";
+        errorTelefono.innerHTML += "El telefono no debe tener mas de 12 numeros.";
+        indicadorError = true;
+        
+        
+    }   
+
+    if(telefonoUsuario.match(/[^0-9+]/g)){
+        errorTelefono.style.fontWeight = "bold";
+        errorTelefono.style.marginTop = "5px";
+        errorTelefono.style.display = "block";
+        errorTelefono.style.color = "red";
+        errorTelefono.innerHTML += "El telefono solo puede contener numeros y el simbolo '+'.";
+        indicadorError = true;
 
     }
 
 
-    if(mailUsuario.length <= 5){
+    if(mailUsuario.length == ""){
 
-        especificacionErrores += "El mail no puede ser menor o igual a 5 caracteres. <br>";
-        
+        errorEmail.style.fontWeight = "bold";
+        errorEmail.style.marginTop = "5px";
+        errorEmail.style.display = "block";
+        errorEmail.style.color = "red";
+        errorEmail.innerHTML += "El mail no puede ser vacio. <br>";
         indicadorError = true;
 
 
     }
 
-    if(!mailUsuario.includes("@")){
+    if(!mailUsuario.match(emailExpresionRegex)){
 
-        especificacionErrores += "El mail debe incluir el : '@'. <br>";
-        
+        errorEmail.style.fontWeight = "bold";
+        errorEmail.style.marginTop = "5px";
+        errorEmail.style.display = "block";
+        errorEmail.style.color = "red";
+        errorEmail.innerHTML += "Formato de mail invalido";
         indicadorError = true;
 
     }
@@ -73,21 +149,28 @@ function validacionFormulario(){
 
     if(indicadorError == false){
 
-        mensajeError.style.display = "block";
-        mensajeError.innerHTML = "El formulario esta correcto";
-        mensajeError.style.color = "green";
-        mensajeError.style.fontWeight = "bold";
+        errorNombre.style.display = "none";
+        errorApellido.style.display = "none";
+        errorTelefono.style.display = "none";
+        errorEmail.style.display = "none";
+
+        // Agrego elemento p
+        
+        
+        
+        const mensajeCorrecto = document.createElement("p");  
+        mensajeValidacion.appendChild(mensajeCorrecto);
+        mensajeCorrecto.style.display = "block";
+        mensajeCorrecto.innerHTML = "El formulario esta correcto";
+        mensajeCorrecto.style.color = "green";
+        mensajeCorrecto.style.fontWeight = "bold";
+
+        
+
+    
 
 
-    } else{
-
-        mensajeError.style.display = "block";
-        mensajeError.style.color = "red";
-        mensajeError.innerHTML = especificacionErrores;
-        mensajeError.style.fontWeight = "bold";
-
-    }
-
+    } 
 
     return false;
 
