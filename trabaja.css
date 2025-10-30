@@ -160,8 +160,14 @@ li a:hover {
     align-items: center;
     overflow-y: auto;
     background-color: #dff2c9;
-
 }
+input:focus::placeholder {
+    color: transparent;
+}
+input:focus
+{
+    outline: none;
+    }
 
 .divC {
     font-size: 20px;
