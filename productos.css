@@ -124,6 +124,7 @@ li a:hover{
 .producto p{
     color: white;
     font-size: 20px;
+    text-align: center;
 }
 
 .categoria{
@@ -147,7 +148,6 @@ li a:hover{
     text-decoration: underline;
 
 }
-
 
 
 
