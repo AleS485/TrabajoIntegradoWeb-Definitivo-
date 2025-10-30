@@ -4,7 +4,7 @@ function validacionFormulario(){
     const apellidoUsuario = document.getElementById("Apellido").value.trim();
     const telefonoUsuario = document.getElementById("Telefono").value.trim();
     const mailUsuario = document.getElementById("email").value.trim();
-    let mensajeError = document.getElementById("error");
+    let mensajeError = document.getElementById("errorSubmit");
 
     mensajeError.style.display = "none";
     let indicadorError = false;
