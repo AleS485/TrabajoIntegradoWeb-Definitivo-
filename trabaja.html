@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="trabaja.css">
 </head>
+
 <body>
-    
+
     <div class="contenedor-principal">
 
         <div class="cabecera">
@@ -15,11 +17,11 @@
             <img class="logo" src="img/logo.PNG" alt="">
             <div class="secciones">
                 <ul>
-                    <li><a href="">Inicio</a></li>
-                    <li>><a href="">Productos</a></li>
-                    <li>><a href="">Postulaciones</a></li>
-                    <li>><a href="">Mas vendidos</a></li>
-                    <li>><a href="">Redes</a></li>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="trabaja.html">Postulaciones</a></li>
+                    <li><a href="index.html#vendidos">Mas vendidos</a></li>
+                    <li><a href="index.html#redes">Redes</a></li>
                 </ul>
             </div>
 
@@ -29,40 +31,52 @@
 
             <form action="" novalidate>
 
-               <div class="form-group">
-               <label for="Nombre">*Nombre:</label>
-                <input type="text" id="Nombre"  name="Nombre"
-                maxlength="20" minlength="10" required>
-            </div>
+                <div class="form-group">
+                    <label for="Nombre">*Nombre:</label>
+                    <input type="text" id="Nombre" name="Nombre" maxlength="30" minlength="10" required>
+                     <span id="errorNombre" class="error" style="display: none;">Nombre no valido, solo letras, hasta 30 caracteres</span>
+                </div>
 
                 <div class="form-group">
-               <label for="Nombre">*Apellido:</label>
-                <input type="text" id="Apellido"  surname="Apellido"
-                maxlength="20" minlength="10" required>
-            </div>
+                    <label for="Nombre">*Apellido:</label>
+                    <input type="text" id="Apellido" surname="Apellido" maxlength="30" minlength="10" required>
+                    <span id="errorApellido" class="error" style="display: none;">Apellido no valido, solo letras, hasta 30 caracteres</span>
+                </div>
 
                 <div class="form-group">
-                <label for="telefono">Telefono</label>
-                <input type="tel" id="telefono" name="telefono" required>
-            </div>
-
-                 <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
+                    <label for="telefono">Telefono</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                    <span id="errorTelefono" class="error" style="display: none;">Ingrese telefono sin "0" ni "15"</span>
+                </div>
 
                 <div class="form-group">
-                <label for="cv">Adjuntar CV:</label>
-                <input type="file">
-            </div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <span id="errorEmail" class="error" style="display: none;">Correo inválido, ejemplo "usuario@gmail.com"</span>
+                </div>
 
                 <div class="form-group">
-                <button type="submit">Enviar</button>
-                <p class="texto-error">error</p>
-            </div>
+                    <label for="cv">Adjuntar CV:</label>
+                    <input type="file">
+                </div>
 
-            
+                <div class="form-group">
+                    <button type="submit">Enviar</button>
+                    <p class="texto-error">error</p>
+                </div>
 
+                <!--<div class ="divMensaje">
+                <p class="mensaje">Formulario enviado correctamente</p>
+                <h3 class="divMensaje">Mensaje</h3>
+                <div class="divMensaje">
+                    <p class="textoDiv">Formulario enviado </p>
+                </div> -->
+                    <div id="divCreado" style="display: none;">
+                        <h3 class="divC">Mensaje</h3>
+                    </div>  
+                    
+
+                </div>
 
             </form>
 
@@ -70,11 +84,6 @@
 
 
         </div>
-
-
-
-
-        
 
 
     
