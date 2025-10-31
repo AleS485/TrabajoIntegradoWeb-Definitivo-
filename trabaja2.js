@@ -32,9 +32,21 @@ function validacionFormulario(){
         errorNombre.style.color = "red";
         errorNombre.style.fontWeight = "bold";
         
-        errorNombre.innerHTML = "El nombre no puede tener menos de 3 caracteres.";
+        errorNombre.innerHTML = "El nombre no puede tener menos de 3 caracteres. <br>";
         
         indicadorError = true;
+    }
+    
+    if(nombreUsuario.length == ""){
+
+        errorNombre.style.fontWeight = "bold";
+        errorNombre.style.marginTop = "5px";
+        errorNombre.style.display = "block";
+        errorNombre.style.color = "red";
+        errorNombre.innerHTML += "El Campo Nombre no puede estar vacio.";
+        indicadorError = true;
+
+
     }
 
     if(nombreUsuario.length >= 20){
@@ -48,7 +60,6 @@ function validacionFormulario(){
         indicadorError = true;
     }
 
-    
     if(nombreUsuario.match(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ ]/g)){
         errorNombre.style.marginTop = "5px";
         errorNombre.style.display = "block";
@@ -61,13 +72,27 @@ function validacionFormulario(){
 
     }
 
+
+
     if(apellidoUsuario.length <= 3){
         errorApellido.style.fontWeight = "bold";
         errorApellido.style.marginTop = "5px";
         errorApellido.style.display = "block";
         errorApellido.style.color = "red";
-        errorApellido.innerHTML += "El apellido no puede tener menos de 3 caracteres.";
+        errorApellido.innerHTML += "El apellido no puede tener menos de 3 caracteres. <br>";
         indicadorError = true;
+
+    }
+
+    if(apellidoUsuario.length == ""){
+
+        errorApellido.style.fontWeight = "bold";
+        errorApellido.style.marginTop = "5px";
+        errorApellido.style.display = "block";
+        errorApellido.style.color = "red";
+        errorApellido.innerHTML += "El Campo Apellido no puede estar vacio.";
+        indicadorError = true;
+
 
     }
 
@@ -96,9 +121,21 @@ function validacionFormulario(){
         errorTelefono.style.marginTop = "5px";
         errorTelefono.style.display = "block";
         errorTelefono.style.color = "red";
-        errorTelefono.innerHTML += "El telefono debe tener mas de 1 numero.";
+        errorTelefono.innerHTML += "El telefono debe tener mas de 1 numero. <br>";
         indicadorError = true;
-    }   
+    }
+    
+    if(telefonoUsuario.length == ""){
+
+        errorTelefono.style.fontWeight = "bold";
+        errorTelefono.style.marginTop = "5px";
+        errorTelefono.style.display = "block";
+        errorTelefono.style.color = "red";
+        errorTelefono.innerHTML += "El Campo Telefono no puede estar vacio.";
+        indicadorError = true;
+
+
+    }
 
     if(telefonoUsuario.length > 12){
         errorTelefono.style.fontWeight = "bold";
